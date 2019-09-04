@@ -1,6 +1,56 @@
 .ant-layout-header{
-  background-color: #f0f2f5;
+  background-color: white;
 }
 .header {
+  background-color: white;
   height: 80px;
+  .header-top{
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    .header-top-inner{
+      height: 100%;
+      float: right;
+      .middle{
+        margin-right: 20px;
+      }
+      .quit{
+        cursor: pointer;
+        color: #1DA57A;
+      }
+    }
+  }
+  .header-bottom{
+    box-sizing: border-box;
+    border-top: 1px solid #1DA57A;
+    height: 40px;
+    line-height: 40px;
+    .title{
+      float: left;
+      position: relative;
+      display: inline-block;
+      margin-left: 20px;
+      &::after{
+        content: '';
+        position: absolute;
+        top: 98%;
+        left: -3px;
+        border-top: 15px solid white;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+      }
+    }
+
+    .header-bottom-inner{
+      float: right;
+      margin-right: 20px;
+      .weather{
+        margin: 0 10px;
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
 }

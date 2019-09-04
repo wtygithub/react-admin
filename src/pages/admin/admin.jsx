@@ -17,13 +17,13 @@ const {Footer, Sider, Content } = Layout;
 export default class Admin extends Component{
     render() {
         const user = memoryUtil.user
-        console.log('admin====>')
+        console.log('首页用户信息')
         console.log(user)
         if(!user._id){
-           // return <Redirect to='/login'/>
+           return <Redirect to='/login'/>
 
-            this.props.history.replace('/login')
-            return false
+           /* this.props.history.replace('/login')
+            return false*/
         }
 
         return(
@@ -34,7 +34,7 @@ export default class Admin extends Component{
                     </Sider>
                     <Layout>
                         <Header></Header>
-                        <Content style={{backgroundColor: 'white'}}>
+                        <Content style={{backgroundColor: 'white',margin:'20px'}}>
                             <Switch>
                                 <Route path='/home' component={Home}/>
                                 <Route path='/category/:id' component={Category}/>

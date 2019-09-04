@@ -54,6 +54,7 @@ class Login extends Component {
         const form = this.props.form
         const {getFieldDecorator} = form
         const user = memoryUtil.user
+        console.log('登陆页输出用户信息===》')
         console.log(user)
         if(user._id){
            // return <Redirect to='/'/>

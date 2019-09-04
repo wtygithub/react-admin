@@ -14,6 +14,7 @@ class LeftNav extends Component{
         }
     }
     getMenuNodes_map = (menuList) => {
+        //获取当前路由path
         var  path = this.props.location.pathname
         return (
             menuList.map(item => {
@@ -27,7 +28,9 @@ class LeftNav extends Component{
                         </Menu.Item>
                     )
                 } else {
-                    const subMenuPath = item.children.find(citem => item.key == path)
+                    const subMenuPath = item.children.find(citem => citem.key == path)
+                    console.log('subMenuPath===>')
+                    console.log(subMenuPath)
                     if(subMenuPath){
                         this.openKey = item.key
                     }
@@ -84,5 +87,5 @@ class LeftNav extends Component{
     }
 
 }
-//高阶函数 用来包装非路由组件，向非路由组件传递3个属性: history/location/match
+//高阶函数withRouter 用来包装非路由组件，向非路由组件传递3个属性: history/location/match
 export default withRouter(LeftNav)
